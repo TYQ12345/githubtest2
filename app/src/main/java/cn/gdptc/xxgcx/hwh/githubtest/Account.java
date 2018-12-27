@@ -11,7 +11,7 @@ public class Account {
         this.id=id;
     }
     public  String getName(String name){
-    return name;
+   return name;
     }
     public  void setName(String name){
         this.name=name;
@@ -24,6 +24,7 @@ public class Account {
     }
     public Account(Long id,String name,Integer balance){
         super();
+        this.id=id;
         this.name=name;
         this.balance=balance;
     }
@@ -36,9 +37,7 @@ public class Account {
         super();
 
     }
-
-    @Override
     public String toString() {
-        return "序号{" + "id=" + id + ", 商品名称='" + name + '\'' + ", 余额=" + balance + '}';
+        return "[序号:" + id + ", 商品名称:" + name + ", 余额:" + balance + "]";
     }}
 
