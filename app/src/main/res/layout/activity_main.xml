@@ -1,20 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/tv_main_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/addLL"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="标题"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13999999" />
+        android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="商品名称"
+        android:inputType="textPersonName"/>
+
+        <EditText
+            android:id="@+id/balanceET"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="金额"
+            android:inputType="number"/>
+
+        <ImageView
+            android:id="@+id/addIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:src="@android:drawable/ic_input_add" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/accountLV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/addLL">
+    </ListView>
+</LinearLayout>
