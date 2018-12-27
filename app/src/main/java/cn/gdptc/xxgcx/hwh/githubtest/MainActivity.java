@@ -44,7 +44,14 @@ public class MainActivity extends Activity {
     public void add(View v) {
         String name=nameET.getText().toString().trim();
         String balance=balanceET.getText().toString().trim();
-
+            Account a=new Account(name,balance.equals("")?0:
+                Integer.parseInt(balance));
+        dao.insert(a);
+        list.add(a);
+        adapter.notifyDataSetChanged();
+        accountLV.setSelection(accountLV.getCount()-1);
+        nameET.setText("");
+        balanceET.setText("");
     }
 
 
