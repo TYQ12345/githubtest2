@@ -12,39 +12,34 @@ import cn.gdptc.xxgcx.hwh.githubtest.dao.MyHelper;
 
 public class AccountDao {
     private MyHelper helper;
-
-    public AccountDao(Context context) {
-        helper = new MyHelper(context);
+    public AccountDao(Context context){
+        helper=new MyHelper(context);
     }
-
-    public void insert(Account account) {
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues values = new ContentValues();
+    public void insert(Account account){
+        SQLiteDatabase db=helper.getWritableDatabase();
+        ContentValues values=new ContentValues();
         values.put("name",account.getName());
-        values.put("balance", account.getBalance());
-        long id = db.insert("account", null, values);
+        values.put("balance",account.getBalance());
+        long id=db.insert("account",null,values);
         account.setId(id);
         db.close();
     }
-
     public int delete(long id) {
-        SQLiteDatabase db = helper.getWritableDatabase();
-        int count = db.delete("account", "id=?", new String[]{id + ""});
+        SQLiteDatabase db=helper.getWritableDatabase();
+        int count=db.delete("account","id=?",new String[] {id+""});
         db.close();
         return count;
     }
-
-    public int update(Account account) {
-        SQLiteDatabase db = helper.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("name", account.getName());
-        values.put("balance", account.getBalance());
-        int count = db.update("accont", values, "_id=?", new String[]{account.getId() + ""});
-        db.close();
+    public int update(Account account){
+        SQLiteDatabase db=helper.getWritableDatabase();
+        ContentValues values=new ContentValues();
+        values.put("name",account.getName());
+        values.put("balance",account.getBalance());
+        int count=db.update("accont",values,"_id=?",new String[] {account.getId()+""})
+                db.close();
         return count;
     }
-
-    public List<Account> queryAll() {
+    public List<Account>queryAll() {
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor c = db.query("account", null, null, null, null, null, "balance DESC");
         List<Account> list = new ArrayList<>();
@@ -58,5 +53,5 @@ public class AccountDao {
         db.close();
         return list;
     }
+    }
 }
-
