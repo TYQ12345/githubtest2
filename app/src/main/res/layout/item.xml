@@ -55,15 +55,14 @@
             android:layout_marginBottom="2dp"
             android:src="@android:drawable/arrow_down_float" />
 
-        </LinearLayout>
+    </LinearLayout>
 
-            <ImageView
-                android:id="@+id/deleteIT"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:src="@android:drawable/ic_menu_delete" />
+    <ImageView
+        android:id="@+id/deleteIT"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@android:drawable/ic_menu_delete" />
 
-
-        </LinearLayout>
+</LinearLayout>
 
 
