@@ -1,4 +1,4 @@
-package cn.gdptc.xxgcx.hwh.githubtest.dao;
+package cn.gdptc.xxgcx.cwj_tyq.product.dao;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

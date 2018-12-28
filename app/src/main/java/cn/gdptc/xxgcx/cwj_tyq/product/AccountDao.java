@@ -1,4 +1,4 @@
-package cn.gdptc.xxgcx.hwh.githubtest;
+package cn.gdptc.xxgcx.cwj_tyq.product;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.gdptc.xxgcx.hwh.githubtest.dao.MyHelper;
+import cn.gdptc.xxgcx.cwj_tyq.product.dao.MyHelper;
 
 public class AccountDao {
     private MyHelper helper;
@@ -26,7 +26,7 @@ public class AccountDao {
     }
     public int delete(long id) {
         SQLiteDatabase db=helper.getWritableDatabase();
-        int count=db.delete("account","id=?",new String[] {id+""});
+        int count=db.delete("account","_id=?",new String[] {id+""});
         db.close();
         return count;
     }
@@ -35,7 +35,7 @@ public class AccountDao {
         ContentValues values=new ContentValues();
         values.put("name",account.getName());
         values.put("balance",account.getBalance());
-        int count=db.update("accont",values,"_id=?",new String[] {account.getId()+""});
+        int count=db.update("account",values,"_id=?",new String[] {account.getId()+""});
                 db.close();
         return count;
     }

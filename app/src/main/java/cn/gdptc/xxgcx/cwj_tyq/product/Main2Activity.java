@@ -1,13 +1,16 @@
-package cn.gdptc.xxgcx.hwh.githubtest;
+package cn.gdptc.xxgcx.cwj_tyq.product;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Main3Activity extends AppCompatActivity {
+import cn.gdptc.xxgcx.hwh.githubtest.R;
+
+public class Main2Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.item);
+
     }
 }

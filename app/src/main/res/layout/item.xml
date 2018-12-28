@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="10dp"
-    tools:context=".Main2Activity">
+    tools:context="cn.gdptc.xxgcx.cwj_tyq.product.Main2Activity">
 
     <TextView
         android:id="@+id/idTV"
@@ -43,6 +43,13 @@
 
         <ImageView
             android:id="@+id/upIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:src="@android:drawable/arrow_up_float" />
+
+        <ImageView
+            android:id="@+id/downIV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"

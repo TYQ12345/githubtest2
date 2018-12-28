@@ -1,4 +1,4 @@
-package cn.gdptc.xxgcx.hwh.githubtest;
+package cn.gdptc.xxgcx.cwj_tyq.product;
 
 public class Account {
     private  Long id;

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="8dp"
-    tools:context=".MainActivity">
+    tools:context="cn.gdptc.xxgcx.cwj_tyq.product.MainActivity">
     <LinearLayout
         android:id="@+id/addLL"
         android:layout_width="match_parent"
