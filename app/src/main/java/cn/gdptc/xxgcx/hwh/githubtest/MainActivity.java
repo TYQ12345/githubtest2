@@ -1,6 +1,7 @@
 package cn.gdptc.xxgcx.hwh.githubtest;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -57,14 +59,14 @@ public class MainActivity extends Activity {
     }
 
     private void MyAdapter extends BaseAdapter{
-        public int getCount () {
+        public int getCount(){
         return list.size();
         }
         private Object getItem ( int position){
             return list.get(position);
         }
 
-        private Long getItemId ( int position){
+        private Long getItemId( int position){
                 return position;
         }
     }
@@ -73,8 +75,54 @@ public class MainActivity extends Activity {
         View item=convertView!=null?convertView:View.inflate(
                 getApplicationContext(),R.layout.item,null);
         TextView idTV=item.findViewById(R.id.idTV);
+        TextView nameTV=(TextView) item.findViewById(R.id.nameTV);
+        TextView balanceTV=(TextView) item.findViewById(R.id.balanceTV);
 
+        final Account a=list.get(position);
+
+        idTV.setText(a.getId()+"");
+        nameTV.setText(a.getName());
+        balanceTV.setText(a.getBalance()+"");
+        ImageView upIV=(ImageView) item.findViewById(R.id.upIV);
+        ImageView downTV=(ImageView) item.findViewById(R.id.downIV);
+        ImageView deleteIV=(ImageView) item.findViewById(R.id.deleteIT);
+
+        upIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              a.setBalance(a.getBalance()+1);
+              notifyDataSetChanged();
+              dao.update(a);
+            }
+        });
+        dowmIV.setOnClickListener(new View.OnClickListener(){
+            public Void onClick(View v) {
+                a.setBalance(a.getBalance() - 1);
+                notifyDataSetChanged();
+                dao.update(a);
+            }
+        });
+        deleteIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.content.DialogInterface.OnClickListener listener=
+                        new android.content.DialogInterface.OnClickListener(){
+                    public void  onClick(DialogInterface dialog,int which){
+                        list.remove(a);
+                        dao.delete(a.getId());
+                        notifyDataSetChanged();
+                    }
+                };
+                Builder builder=new Builder(MainActivity.this);
+                builder.setTitle("确定要删除吗？");
+                builder.setpositiveButton("确定",listener);
+                builder.setNegativeButton("取消",null);
+
+            }
+        });
+        return item;
     }
+
 
 
 

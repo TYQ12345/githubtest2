@@ -35,7 +35,7 @@ public class AccountDao {
         ContentValues values=new ContentValues();
         values.put("name",account.getName());
         values.put("balance",account.getBalance());
-        int count=db.update("accont",values,"_id=?",new String[] {account.getId()+""})
+        int count=db.update("accont",values,"_id=?",new String[] {account.getId()+""});
                 db.close();
         return count;
     }
@@ -54,4 +54,4 @@ public class AccountDao {
         return list;
     }
     }
-}
+
