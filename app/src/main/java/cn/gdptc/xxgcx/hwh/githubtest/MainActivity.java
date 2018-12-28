@@ -7,9 +7,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -54,15 +56,35 @@ public class MainActivity extends Activity {
         balanceET.setText("");
     }
 
+    private void MyAdapter extends BaseAdapter{
+        public int getCount () {
+        return list.size();
+        }
+        private Object getItem ( int position){
+            return list.get(position);
+        }
 
-
-
-    private class MyOnItemClickListener implements AdapterView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Account a = (Account) parent.getItemAtPosition(position);
-            Toast.makeText(getApplicationContext(), a.toString(),
-                    Toast.LENGTH_SHORT);
+        private Long getItemId ( int position){
+                return position;
         }
     }
-}
+
+    public View getView (int position,View convertView,ViewGroup parent){
+        View item=convertView!=null?convertView:View.inflate(
+                getApplicationContext(),R.layout.item,null);
+        TextView idTV=item.findViewById(R.id.idTV);
+
+    }
+
+
+
+
+        private class MyOnItemClickListener implements AdapterView.OnItemClickListener {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Account a = (Account) parent.getItemAtPosition(position);
+                Toast.makeText(getApplicationContext(), a.toString(),
+                        Toast.LENGTH_SHORT);
+            }
+        }
+    }
