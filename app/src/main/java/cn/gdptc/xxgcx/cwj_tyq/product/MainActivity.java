@@ -17,8 +17,6 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import cn.gdptc.xxgcx.hwh.githubtest.R;
-
 public class MainActivity extends Activity {
     private List<Account> list;
     private AccountDao dao;
