@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="172dp"
         android:layout_marginTop="221dp"
-        android:background="@drawable/Victor" />
+        android:background="@drawable/victor" />
     <TextView
         android:id="@+id/tv_main_title"
         android:layout_width="wrap_content"
