@@ -18,7 +18,6 @@
         </activity>
         <activity android:name=".Main2Activity" />
         <activity android:name="cn.gdptc.xxgcx.hwh.githubtest.Login" />
-        <activity android:name="cn.gdptc.xxgcx.hwh.githubtest.main_title_bar" />
     </application>
 
 </manifest>
